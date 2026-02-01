@@ -11,8 +11,7 @@ export default function About() {
     const lines = [
         "悲観は気分、楽観は意思。",
         "現場を知っている。",
-        "AIを使いこなせる。",
-        "業務を効率化できる。",
+        "課題を見つけて、仕組みで解決できる。",
         "だから、変えられる。",
     ];
 
@@ -43,7 +42,7 @@ export default function About() {
                     <p className="text-xl text-gray-400 leading-relaxed">
                         1級施工管理技士として現場を歩いてきた経験と、
                         <br className="hidden md:block" />
-                        AIツールを駆使する技術力で、建設業界のDXを推進します。
+                        スプレッドシート地獄を解決する技術力で、業務効率化を推進します。
                     </p>
                 </motion.div>
             </div>

@@ -5,14 +5,14 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-    { name: "Antigravity", category: "AI Coding" },
-    { name: "AppSheet", category: "No-Code App" },
-    { name: "GAS", category: "Automation" },
-    { name: "n8n", category: "Workflow" },
-    { name: "Dify", category: "AI Agent" },
-    { name: "Manus", category: "AI Agent" },
-    { name: "Obsidian", category: "Knowledge" },
     { name: "1級施工管理技士", category: "国家資格" },
+    { name: "AppSheet", category: "No-Code" },
+    { name: "Google Apps Script", category: "Automation" },
+    { name: "Next.js", category: "Web Framework" },
+    { name: "Supabase", category: "Database" },
+    { name: "Python", category: "Backend" },
+    { name: "n8n", category: "Workflow" },
+    { name: "Obsidian", category: "Knowledge" },
 ];
 
 export default function Skills() {
@@ -41,7 +41,7 @@ export default function Skills() {
                         animate={
                             isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
                         }
-                        transition={{ duration: 0.8, delay: index * 0.15 }}
+                        transition={{ duration: 0.8, delay: index * 0.1 }}
                         className="group relative border border-white/20 rounded-lg p-6 hover:border-[#00D4FF] transition-colors duration-300"
                     >
                         <p className="text-lg font-semibold text-white group-hover:text-[#00D4FF] transition-colors">

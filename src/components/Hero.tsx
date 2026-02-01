@@ -33,7 +33,7 @@ export default function Hero() {
             現場を、変える。
           </h1>
           <p className="mt-4 text-lg text-gray-300 md:text-xl">
-            Construction × AI Efficiency Specialist
+            Construction DX Specialist
           </p>
         </motion.div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
           className="text-sm tracking-widest text-white/60"
           style={{ writingMode: "vertical-rl" }}
         >
-          GENBALINK — 建設 × AI
+          GENBALINK — 建設 × DX
         </p>
       </motion.div>
     </section>

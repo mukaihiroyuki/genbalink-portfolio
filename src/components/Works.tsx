@@ -3,22 +3,50 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 const projects = [
     {
-        title: "キメラの卵",
-        description: "建設機材管理アプリ。QRコードで機材をトラッキング。",
-        tags: ["Next.js", "Supabase", "Vercel"],
+        slug: "equipment-management",
+        title: "建設機材管理アプリ",
+        description: "車両・機材をQRで一元管理。探す時間をゼロに。",
+        tags: ["AppSheet", "QR Code"],
+        color: "#FFB800",
     },
     {
-        title: "営業報告自動化",
-        description: "営業チームの報告業務を自動化するシステム。",
-        tags: ["GAS", "AppSheet", "Googleスプレッドシート"],
+        slug: "tree-inventory",
+        title: "樹木在庫管理アプリ",
+        description: "2万本の樹木をスマホで即検索。在庫が見える化。",
+        tags: ["Next.js", "Supabase", "PWA"],
+        color: "#4CAF50",
     },
     {
-        title: "櫻井清掃管理",
-        description: "清掃作業報告をスマホから簡単に。Notion連携。",
-        tags: ["React", "Supabase", "Notion API"],
+        slug: "document-check",
+        title: "顧客書類チェックアプリ",
+        description: "4万件超のデータを0.3秒で検索。スプシ地獄から解放。",
+        tags: ["Next.js", "Supabase"],
+        color: "#2196F3",
+    },
+    {
+        slug: "invoice-automation",
+        title: "請求書自動化システム",
+        description: "転記ゼロ、年64万円削減。PDF自動生成。",
+        tags: ["GAS", "Webアプリ"],
+        color: "#9C27B0",
+    },
+    {
+        slug: "expense-bot",
+        title: "経費精算Bot",
+        description: "レシート投げるだけで仕訳完了。AIが自動分類。",
+        tags: ["Python", "Discord", "Gemini"],
+        color: "#00BCD4",
+    },
+    {
+        slug: "sales-report",
+        title: "営業報告アプリ",
+        description: "スマホPIN入力で報告完結。入金漏れも自動通知。",
+        tags: ["GAS", "Webアプリ"],
+        color: "#FF5722",
     },
 ];
 
@@ -28,6 +56,7 @@ export default function Works() {
 
     return (
         <section
+            id="works"
             ref={ref}
             className="min-h-screen flex flex-col items-center justify-center bg-[#111] px-6 py-24"
         >
@@ -40,34 +69,55 @@ export default function Works() {
                 Works
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
                 {projects.map((project, index) => (
-                    <motion.div
-                        key={project.title}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={
-                            isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                        }
-                        transition={{ duration: 1.0, delay: index * 0.3 }}
-                        className="group bg-[#1a1a1a] rounded-xl p-6 hover:bg-[#222] transition-colors duration-300 border border-white/10 hover:border-[#00D4FF]/50"
-                    >
-                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00D4FF] transition-colors">
-                            {project.title}
-                        </h3>
-                        <p className="text-gray-400 mb-4 leading-relaxed">
-                            {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="text-xs px-3 py-1 bg-white/10 text-gray-300 rounded-full"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
+                    <Link key={project.slug} href={`/works/${project.slug}`}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={
+                                isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                            }
+                            transition={{ duration: 1.0, delay: index * 0.15 }}
+                            className="group bg-[#1a1a1a] rounded-xl p-6 hover:bg-[#222] transition-all duration-300 border border-white/10 hover:border-opacity-50 cursor-pointer h-full"
+                            style={{
+                                ["--hover-color" as string]: project.color,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = project.color;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+                            }}
+                        >
+                            <h3
+                                className="text-xl font-bold text-white mb-3 group-hover:transition-colors"
+                                style={{
+                                    transition: "color 0.3s",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = project.color;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = "white";
+                                }}
+                            >
+                                {project.title}
+                            </h3>
+                            <p className="text-gray-400 mb-4 leading-relaxed text-sm">
+                                {project.description}
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-xs px-3 py-1 bg-white/10 text-gray-300 rounded-full"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </Link>
                 ))}
             </div>
         </section>
