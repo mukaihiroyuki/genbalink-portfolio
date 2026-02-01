@@ -23,12 +23,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
-
-/* Each section snaps */
-section {
-  scroll-snap-align: start;
 }
 
 /* Scroll indicator animation */
