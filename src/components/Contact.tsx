@@ -39,7 +39,9 @@ export default function Contact() {
                     isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
                 }
                 transition={{ duration: 0.5, delay: 0.4 }}
-                href="mailto:mnakano.michinoku@gmail.com"
+                href="https://forms.gle/QT8fdvNzWeXY8BYZ7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#00D4FF] text-black font-semibold rounded-full hover:bg-[#00B8E0] transition-colors duration-300"
             >
                 お問い合わせ
@@ -52,7 +54,7 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-24 text-gray-600 text-sm"
             >
-                © 2025 Genbalink. All rights reserved.
+                © 2026 Genbalink. All rights reserved.
             </motion.footer>
         </section>
     );
