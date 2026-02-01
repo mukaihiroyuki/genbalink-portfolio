@@ -28,7 +28,7 @@ export default function Blog() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-gray-400 text-lg mb-10 text-center max-w-md"
             >
-                現場DXの実践記録や、業務改善の裏側を発信しています。
+                現場DXの実践記録や業務改善の裏側を発信中。
             </motion.p>
 
             <motion.a
