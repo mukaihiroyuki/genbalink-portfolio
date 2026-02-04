@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 const skills = [
     { name: "1級土木施工管理技士 / 2級造園施工管理技士", category: "国家資格" },
-    { name: "AppSheet", category: "No-Code" },
+    { name: "System Architecture", category: "Infrastructure" },
     { name: "Google Apps Script", category: "Automation" },
     { name: "Next.js", category: "Web Framework" },
     { name: "Supabase", category: "Database" },
