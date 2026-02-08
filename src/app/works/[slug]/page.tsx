@@ -52,6 +52,7 @@ const projects = {
         manga: "/images/manga_expense_bot.png",
         tech: ["Python", "Discord.py", "Gemini API", "Google Sheets"],
         color: "#00BCD4",
+        noteUrl: "https://note.com/genbalink/n/n5ccc31e9f9d1",
     },
     "sales-report": {
         title: "営業報告アプリ",
