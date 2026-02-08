@@ -9,12 +9,13 @@ import { use } from "react";
 const projects = {
     "equipment-management": {
         title: "建設機材管理アプリ",
-        subtitle: "車両・機材をQRで一元管理",
+        subtitle: "300時間の開発。現場導入ゼロ。",
         description:
-            "建設現場の車両や機材がどこにあるか分からない…紙の台帳を探し回る毎日。QRコードとスマホで、探す時間をゼロに。",
+            "建設現場の車両や機材がどこにあるか分からない…紙の台帳を探し回る毎日。AppSheetで解決アプリを作った。コミュニティでは絶賛された。でも、現場では1日も動かなかった。この経験が、今の開発姿勢の原点になっている。",
         manga: "/images/manga_equipment.png",
         tech: ["AppSheet", "Google Sheets", "QR Code"],
         color: "#FFB800",
+        noteUrl: "https://note.com/genbalink/n/n71ed479ad55e",
     },
     "tree-inventory": {
         title: "樹木在庫管理アプリ",
@@ -141,6 +142,64 @@ export default function ProjectPage({ params }: { params: Params }) {
                         {project.description}
                     </p>
                 </motion.div>
+
+                {/* Note Article Link */}
+                {"noteUrl" in project && project.noteUrl && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="mb-12"
+                    >
+                        <a
+                            href={project.noteUrl as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group block p-8 rounded-xl border-l-4 border border-white/10 bg-gradient-to-r from-[#1a1a1a] to-[#111] hover:to-[#1a1a1a] transition-all duration-300"
+                            style={{
+                                borderLeftColor: project.color,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = project.color;
+                                e.currentTarget.style.boxShadow = `0 0 30px ${project.color}30`;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+                                e.currentTarget.style.borderLeftColor = project.color;
+                                e.currentTarget.style.boxShadow = "none";
+                            }}
+                        >
+                            <p className="text-xs font-medium tracking-widest uppercase mb-3" style={{ color: project.color }}>
+                                Related Article
+                            </p>
+                            <p className="text-xl md:text-2xl text-white font-bold mb-4">
+                                この経験について書いた記事を読む
+                            </p>
+                            <div className="flex items-center gap-3">
+                                <span className="text-sm text-gray-400">note.com</span>
+                                <div
+                                    className="flex items-center justify-center w-8 h-8 rounded-full group-hover:translate-x-1 transition-transform"
+                                    style={{ backgroundColor: `${project.color}20` }}
+                                >
+                                    <svg
+                                        className="w-4 h-4"
+                                        style={{ color: project.color }}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </motion.div>
+                )}
 
                 {/* Tech Stack */}
                 <motion.div

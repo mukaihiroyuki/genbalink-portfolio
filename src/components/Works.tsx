@@ -9,7 +9,7 @@ const projects = [
     {
         slug: "equipment-management",
         title: "建設機材管理アプリ",
-        description: "車両・機材をQRで一元管理。探す時間をゼロに。",
+        description: "AppSheetで300時間かけて開発。現場では導入されなかった原点のアプリ。",
         tags: ["Rapid Prototyping", "QR Code"],
         color: "#FFB800",
     },
