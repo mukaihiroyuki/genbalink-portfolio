@@ -34,6 +34,7 @@ const projects = {
         manga: "/images/manga_document_check.png",
         tech: ["Next.js", "Supabase", "Google Apps Script"],
         color: "#2196F3",
+        noteUrl: "https://note.com/genbalink/n/n8e4d847a3d49",
     },
     "invoice-automation": {
         title: "請求書自動化システム",
