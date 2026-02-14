@@ -25,6 +25,11 @@ const projects = {
         manga: "/images/manga_tree_inventory.png",
         tech: ["Next.js", "Supabase", "PWA", "QR Code"],
         color: "#4CAF50",
+        screenshots: [
+            { src: "/images/screenshots/tree-inventory/iphon_top.png", caption: "スマホダッシュボード — 在庫数・販売可能数を現場から即確認", mobile: true },
+            { src: "/images/screenshots/tree-inventory/QR.png", caption: "QRスキャン — 樹木ラベルを読み取って瞬時にデータ表示", mobile: true },
+            { src: "/images/screenshots/tree-inventory/iphone_dit.png", caption: "樹木詳細 — 写真・管理番号・Bluetoothラベル印刷まで対応", mobile: true },
+        ],
     },
     "document-check": {
         title: "顧客書類チェックアプリ",
@@ -35,6 +40,11 @@ const projects = {
         tech: ["Next.js", "Supabase", "Google Apps Script"],
         color: "#2196F3",
         noteUrl: "https://note.com/genbalink/n/n8e4d847a3d49",
+        screenshots: [
+            { src: "/images/screenshots/document-check/document-check_main.png", caption: "契約管理ビュー — ステータス・入金・収録を一画面で把握" },
+            { src: "/images/screenshots/document-check/document-check_cal.png", caption: "周知カレンダー — チーム全体の掟と予定を共有" },
+            { src: "/images/screenshots/document-check/document-check_pay.png", caption: "入金ダッシュボード — 未処理案件を自動で可視化" },
+        ],
     },
     "invoice-automation": {
         title: "請求書自動化システム",
@@ -44,6 +54,10 @@ const projects = {
         manga: "/images/manga_invoice_automation.png",
         tech: ["Google Apps Script", "HTML/CSS/JS", "PDF生成"],
         color: "#9C27B0",
+        screenshots: [
+            { src: "/images/screenshots/invoice-automation/invoice_top.png", caption: "提出フォーム — 明細入力だけで請求書番号を自動生成" },
+            { src: "/images/screenshots/invoice-automation/invoice-doc.png", caption: "PDF出力 — 入力データから請求書を自動生成・メール送信" },
+        ],
     },
     "expense-bot": {
         title: "経費精算Bot",
@@ -54,6 +68,11 @@ const projects = {
         tech: ["Python", "Discord.py", "Gemini API", "Google Sheets"],
         color: "#00BCD4",
         noteUrl: "https://note.com/genbalink/n/n5ccc31e9f9d1",
+        screenshots: [
+            { src: "/images/screenshots/expense-bot/receipt.png", caption: "レシート投稿 — 写真を投げるだけでAIが自動記帳・仕訳" },
+            { src: "/images/screenshots/expense-bot/discord.png", caption: "集計コマンド — 未精算リストやグラフをチャットで即確認" },
+            { src: "/images/screenshots/expense-bot/excel.png", caption: "Excel出力 — レシート画像付きで経費データを一括エクスポート" },
+        ],
     },
     "sales-report": {
         title: "営業報告アプリ",
@@ -132,6 +151,40 @@ export default function ProjectPage({ params }: { params: Params }) {
                         className="w-full h-auto"
                     />
                 </motion.div>
+
+                {/* Screenshots */}
+                {"screenshots" in project && project.screenshots && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="mb-12"
+                    >
+                        <p className="text-sm text-gray-500 mb-6 tracking-widest uppercase">
+                            Actual Screens
+                        </p>
+                        <div className="space-y-8">
+                            {(project.screenshots as { src: string; caption: string; mobile?: boolean }[]).map(
+                                (shot, idx) => (
+                                    <div key={idx} className={shot.mobile ? "max-w-sm mx-auto" : ""}>
+                                        <div className="rounded-xl overflow-hidden border border-white/10">
+                                            <Image
+                                                src={shot.src}
+                                                alt={shot.caption}
+                                                width={shot.mobile ? 400 : 1200}
+                                                height={shot.mobile ? 800 : 600}
+                                                className="w-full h-auto"
+                                            />
+                                        </div>
+                                        <p className="text-sm text-gray-400 mt-3 ml-1">
+                                            {shot.caption}
+                                        </p>
+                                    </div>
+                                )
+                            )}
+                        </div>
+                    </motion.div>
+                )}
 
                 {/* Description */}
                 <motion.div
