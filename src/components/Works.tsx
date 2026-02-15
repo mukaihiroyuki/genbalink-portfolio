@@ -7,13 +7,6 @@ import Link from "next/link";
 
 const mainProjects = [
     {
-        slug: "construction-crm",
-        title: "建設業向けCRM",
-        description: "2〜3ツールまたぎの情報を、これ1つに。導入費ゼロ、月額ゼロ。",
-        tags: ["Next.js", "Supabase", "PWA"],
-        color: "#5C6BC0",
-    },
-    {
         slug: "daily-report",
         title: "現場日報アプリ",
         description: "紙の日報をゼロに。現場をリアルタイム管理。",
@@ -33,6 +26,22 @@ const mainProjects = [
         description: "4万件超のデータを0.3秒で検索。スプシ地獄から解放。",
         tags: ["Next.js", "Supabase"],
         color: "#2196F3",
+    },
+    {
+        slug: "construction-crm",
+        title: "建設業向けCRM",
+        description: "2〜3ツールまたぎの情報を、これ1つに。導入費ゼロ、月額ゼロ。",
+        tags: ["Next.js", "Supabase", "PWA"],
+        color: "#5C6BC0",
+        badge: "開発中",
+    },
+    {
+        slug: "construction-plan",
+        title: "施工計画書AI自動化",
+        description: "設計書を渡すだけで提出書類を自動生成。最終目標は7〜8割自動化。",
+        tags: ["Python", "Gemini API", "PDF解析"],
+        color: "#E65100",
+        badge: "開発中",
     },
     {
         slug: "equipment-management",
@@ -97,6 +106,11 @@ export default function Works() {
                                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
                             }}
                         >
+                            {"badge" in project && project.badge && (
+                                <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 mb-3">
+                                    {project.badge}
+                                </span>
+                            )}
                             <h3
                                 className="text-xl font-bold text-white mb-3 group-hover:transition-colors"
                                 style={{

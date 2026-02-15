@@ -74,9 +74,20 @@ const projects = {
             { src: "/images/screenshots/expense-bot/excel.png", caption: "Excel出力 — レシート画像付きで経費データを一括エクスポート" },
         ],
     },
+    "construction-plan": {
+        title: "施工計画書AI自動化",
+        subtitle: "膨大な書類作成を、AIで7〜8割自動化へ",
+        description:
+            "施工計画書——現場が始まる前に必ず作る、膨大で面倒な書類の代表格。まずは着工前に役所へ提出する書類から着手。PythonとAIで設計書のPDFを読み込み、工程表や建設リサイクル書類の自動生成に成功した。事務員が設計書を渡すだけで提出書類が揃う状態を目指しつつ、最終ゴールは施工計画書の7〜8割自動化。",
+        manga: "/images/manga_construction_planning.png",
+        tech: ["Python", "Gemini API", "PDF解析", "Word/Excel自動生成"],
+        color: "#E65100",
+        badge: "開発中",
+    },
     "construction-crm": {
         title: "建設業向けCRM",
         subtitle: "2〜3ツールまたぎの情報を、これ1つに",
+        badge: "開発中",
         description:
             "頼りにしていた業務ツールが廃止の危機。代わりに勧められたツールは現場で不評。「同じ使い勝手で作れないか」——現場からの一言がきっかけだった。顧客管理・対応履歴・写真をスレッドで一元管理。誰がいつ何をしたか、5W1Hで追える。担当者が辞めても情報は残る。導入費ゼロ、月額ゼロ。ナレッジ管理のプロトタイプを見せたら「CRM本体も頼む」と話が動いた。",
         manga: "/images/manga_crm_development.png",
@@ -152,12 +163,19 @@ export default function ProjectPage({ params }: { params: Params }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1
-                        className="text-4xl md:text-5xl font-bold text-white mb-4"
-                        style={{ textShadow: `0 0 30px ${project.color}40` }}
-                    >
-                        {project.title}
-                    </h1>
+                    <div className="flex items-center gap-4 mb-4">
+                        <h1
+                            className="text-4xl md:text-5xl font-bold text-white"
+                            style={{ textShadow: `0 0 30px ${project.color}40` }}
+                        >
+                            {project.title}
+                        </h1>
+                        {"badge" in project && project.badge && (
+                            <span className="inline-block text-sm font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 whitespace-nowrap">
+                                {project.badge as string}
+                            </span>
+                        )}
+                    </div>
                     <p className="text-xl text-gray-400 mb-8">
                         {project.subtitle}
                     </p>
