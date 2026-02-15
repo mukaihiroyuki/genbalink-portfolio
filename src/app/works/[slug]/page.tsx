@@ -23,7 +23,7 @@ const projects = {
         description:
             "広大な圃場に2万本以上の樹木。どこに何があるか、PCで検索しても遅い…。PWAアプリとQRタグで、現場から瞬時に在庫を把握。",
         manga: "/images/manga_tree_inventory.png",
-        tech: ["Next.js", "Supabase", "PWA", "QR Code"],
+        tech: ["Next.js", "Supabase", "PWA", "QR Code", "Bluetooth印刷"],
         color: "#4CAF50",
         screenshots: [
             { src: "/images/screenshots/tree-inventory/iphon_top.png", caption: "スマホダッシュボード — 在庫数・販売可能数を現場から即確認", mobile: true },
@@ -72,6 +72,19 @@ const projects = {
             { src: "/images/screenshots/expense-bot/receipt.png", caption: "レシート投稿 — 写真を投げるだけでAIが自動記帳・仕訳" },
             { src: "/images/screenshots/expense-bot/discord.png", caption: "集計コマンド — 未精算リストやグラフをチャットで即確認" },
             { src: "/images/screenshots/expense-bot/excel.png", caption: "Excel出力 — レシート画像付きで経費データを一括エクスポート" },
+        ],
+    },
+    "construction-crm": {
+        title: "建設業向けCRM",
+        subtitle: "2〜3ツールまたぎの情報を、これ1つに",
+        description:
+            "頼りにしていた業務ツールが廃止の危機。代わりに勧められたツールは現場で不評。「同じ使い勝手で作れないか」——現場からの一言がきっかけだった。顧客管理・対応履歴・写真をスレッドで一元管理。誰がいつ何をしたか、5W1Hで追える。担当者が辞めても情報は残る。導入費ゼロ、月額ゼロ。ナレッジ管理のプロトタイプを見せたら「CRM本体も頼む」と話が動いた。",
+        manga: "/images/manga_crm_development.png",
+        tech: ["Next.js", "Supabase", "PWA"],
+        color: "#5C6BC0",
+        screenshots: [
+            { src: "/images/screenshots/construction-crm/crm-knowledge-list.png", caption: "ナレッジ一覧 — 案件をタグ・担当者・工事ステータスで管理" },
+            { src: "/images/screenshots/construction-crm/crm-knowledge-detail.png", caption: "ナレッジ詳細 — スレッド・写真管理で5W1Hを時系列で記録" },
         ],
     },
     "daily-report": {

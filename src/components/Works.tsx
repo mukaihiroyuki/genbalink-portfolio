@@ -7,6 +7,13 @@ import Link from "next/link";
 
 const mainProjects = [
     {
+        slug: "construction-crm",
+        title: "建設業向けCRM",
+        description: "2〜3ツールまたぎの情報を、これ1つに。導入費ゼロ、月額ゼロ。",
+        tags: ["Next.js", "Supabase", "PWA"],
+        color: "#5C6BC0",
+    },
+    {
         slug: "daily-report",
         title: "現場日報アプリ",
         description: "紙の日報をゼロに。現場をリアルタイム管理。",
@@ -17,7 +24,7 @@ const mainProjects = [
         slug: "tree-inventory",
         title: "樹木在庫管理アプリ",
         description: "2万本の樹木をスマホで即検索。在庫が見える化。",
-        tags: ["Next.js", "Supabase", "PWA"],
+        tags: ["Next.js", "Supabase", "PWA", "QR Code"],
         color: "#4CAF50",
     },
     {
