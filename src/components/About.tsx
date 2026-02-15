@@ -9,7 +9,6 @@ export default function About() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     const lines = [
-        "悲観は気分、楽観は意思。",
         "現場を知っている。",
         "課題を見つけて、仕組みで解決できる。",
         "だから、変えられる。",
@@ -40,9 +39,9 @@ export default function About() {
                     className="mt-12"
                 >
                     <p className="text-xl text-gray-400 leading-relaxed">
-                        1級施工管理技士として現場を歩いてきた経験と、
+                        1級土木施工管理技士として現場を歩いてきた経験と、
                         <br className="hidden md:block" />
-                        スプレッドシート地獄を解決する技術力で、業務効率化を推進します。
+                        Excel地獄を解決する技術力で、業務効率化を推進します。
                     </p>
                 </motion.div>
             </div>
