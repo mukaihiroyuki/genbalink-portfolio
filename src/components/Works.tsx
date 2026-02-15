@@ -5,13 +5,13 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
-const projects = [
+const mainProjects = [
     {
-        slug: "equipment-management",
-        title: "建設機材管理アプリ",
-        description: "AppSheetで300時間かけて開発。現場では導入されなかった原点のアプリ。",
-        tags: ["Rapid Prototyping", "QR Code"],
-        color: "#FFB800",
+        slug: "daily-report",
+        title: "現場日報アプリ",
+        description: "紙の日報をゼロに。現場をリアルタイム管理。",
+        tags: ["Next.js", "Supabase", "PWA"],
+        color: "#2E7D32",
     },
     {
         slug: "tree-inventory",
@@ -28,25 +28,26 @@ const projects = [
         color: "#2196F3",
     },
     {
+        slug: "equipment-management",
+        title: "建設機材管理アプリ",
+        description: "AppSheetで300時間かけて開発。現場では導入されなかった原点のアプリ。",
+        tags: ["Rapid Prototyping", "QR Code"],
+        color: "#FFB800",
+    },
+];
+
+const otherProjects = [
+    {
         slug: "invoice-automation",
         title: "請求書自動化システム",
-        description: "転記ゼロ、年64万円削減。PDF自動生成。",
-        tags: ["GAS", "Webアプリ"],
-        color: "#9C27B0",
     },
     {
         slug: "expense-bot",
         title: "経費精算Bot",
-        description: "レシート投げるだけで仕訳完了。AIが自動分類。",
-        tags: ["Python", "Discord", "Gemini"],
-        color: "#00BCD4",
     },
     {
         slug: "sales-report",
         title: "営業報告アプリ",
-        description: "スマホPIN入力で報告完結。入金漏れも自動通知。",
-        tags: ["GAS", "Webアプリ"],
-        color: "#FF5722",
     },
 ];
 
@@ -70,7 +71,7 @@ export default function Works() {
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
-                {projects.map((project, index) => (
+                {mainProjects.map((project, index) => (
                     <Link key={project.slug} href={`/works/${project.slug}`}>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -120,6 +121,27 @@ export default function Works() {
                     </Link>
                 ))}
             </div>
+
+            {/* その他の実績 */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 1.0, delay: 0.8 }}
+                className="mt-12 text-center"
+            >
+                <p className="text-sm text-gray-500 mb-3">その他の実績</p>
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    {otherProjects.map((project) => (
+                        <Link
+                            key={project.slug}
+                            href={`/works/${project.slug}`}
+                            className="text-sm text-gray-400 hover:text-white transition-colors duration-200 underline underline-offset-4 decoration-gray-600 hover:decoration-white"
+                        >
+                            {project.title}
+                        </Link>
+                    ))}
+                </div>
+            </motion.div>
         </section>
     );
 }

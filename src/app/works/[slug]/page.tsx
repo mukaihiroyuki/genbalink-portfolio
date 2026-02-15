@@ -74,6 +74,20 @@ const projects = {
             { src: "/images/screenshots/expense-bot/excel.png", caption: "Excel出力 — レシート画像付きで経費データを一括エクスポート" },
         ],
     },
+    "daily-report": {
+        title: "現場日報アプリ",
+        subtitle: "紙の日報をゼロに。現場をリアルタイム管理",
+        description:
+            "毎日複数班が提出する紙の日報。事務員が手入力で転記する作業に追われ、本来やるべき設計業務がおろそかになっていた。アプリで現場から直接入力、提出状況はステータスで一目瞭然。収益ダッシュボードで経営者が外出先からリアルタイムに数字を確認できる。現在、現場の作業員と事務員からフィードバックをもらいながら調整中。日報処理に奪われていた時間を、攻めの仕事に取り戻す。",
+        manga: "/images/manga_daily_report.png",
+        tech: ["Next.js", "Supabase", "PWA"],
+        color: "#2E7D32",
+        screenshots: [
+            { src: "/images/screenshots/daily-report/daily-report-input.png", caption: "現場からワンタップで日報提出", mobile: true },
+            { src: "/images/screenshots/daily-report/daily-report-history.png", caption: "全班の日報をステータス管理" },
+            { src: "/images/screenshots/daily-report/daily-report-revenue.png", caption: "収益状況をリアルタイムで確認", mobile: true },
+        ],
+    },
     "sales-report": {
         title: "営業報告アプリ",
         subtitle: "スマホPIN入力で報告完結",
@@ -137,20 +151,22 @@ export default function ProjectPage({ params }: { params: Params }) {
                 </motion.div>
 
                 {/* Manga */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mb-12 rounded-xl overflow-hidden border border-white/10"
-                >
-                    <Image
-                        src={project.manga}
-                        alt={project.title}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto"
-                    />
-                </motion.div>
+                {"manga" in project && project.manga && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="mb-12 rounded-xl overflow-hidden border border-white/10"
+                    >
+                        <Image
+                            src={project.manga as string}
+                            alt={project.title}
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto"
+                        />
+                    </motion.div>
+                )}
 
                 {/* Screenshots */}
                 {"screenshots" in project && project.screenshots && (
