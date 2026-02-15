@@ -30,7 +30,7 @@ const mainProjects = [
     {
         slug: "construction-crm",
         title: "建設業向けCRM",
-        description: "2〜3ツールまたぎの情報を、これ1つに。導入費ゼロ、月額ゼロ。",
+        description: "2〜3ツールまたぎの情報を、これ1つに。自社開発のため外部コスト不要。",
         tags: ["Next.js", "Supabase", "PWA"],
         color: "#5C6BC0",
         badge: "開発中",
