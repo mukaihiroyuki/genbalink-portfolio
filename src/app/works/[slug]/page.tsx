@@ -10,6 +10,7 @@ const projects = {
     "equipment-management": {
         title: "建設機材管理アプリ",
         subtitle: "300時間の開発。現場導入ゼロ。",
+        badge: "原点",
         description:
             "建設現場の車両や機材がどこにあるか分からない…紙の台帳を探し回る毎日。AppSheetで解決アプリを作った。コミュニティでは絶賛された。でも、現場では1日も動かなかった。この経験が、今の開発姿勢の原点になっている。",
         manga: "/images/manga_equipment.png",
@@ -20,6 +21,7 @@ const projects = {
     "tree-inventory": {
         title: "樹木在庫管理アプリ",
         subtitle: "2万本の樹木をスマホで即検索",
+        badge: "運用中",
         description:
             "広大な圃場に2万本以上の樹木。どこに何があるか、PCで検索しても遅い…。PWAアプリとQRタグで、現場から瞬時に在庫を把握。",
         manga: "/images/manga_tree_inventory.png",
@@ -34,6 +36,7 @@ const projects = {
     "document-check": {
         title: "顧客書類チェックアプリ",
         subtitle: "4万件超のデータを0.3秒で検索",
+        badge: "運用中",
         description:
             "4万件を超える顧客データ。スプレッドシートを開くだけで3分。契約書の場所を探してLINEで確認…もう限界。Supabaseへの移行で、検索は0.3秒に。",
         manga: "/images/manga_document_check.png",
@@ -49,6 +52,7 @@ const projects = {
     "invoice-automation": {
         title: "請求書自動化システム",
         subtitle: "転記ゼロ、年64万円削減",
+        badge: "運用中",
         description:
             "30人分の請求書を毎月手作業で転記。ミスして怒られ、手戻りの連続。入力するだけでPDF自動生成、控えも自動送信。転記作業がゼロになった。",
         manga: "/images/manga_invoice_automation.png",
@@ -102,6 +106,7 @@ const projects = {
     "daily-report": {
         title: "現場日報アプリ",
         subtitle: "紙の日報をゼロに。現場をリアルタイム管理",
+        badge: "運用中",
         description:
             "毎日複数班が提出する紙の日報。事務員が手入力で転記する作業に追われ、本来やるべき設計業務がおろそかになっていた。アプリで現場から直接入力、提出状況はステータスで一目瞭然。収益ダッシュボードで経営者が外出先からリアルタイムに数字を確認できる。現在、現場の作業員と事務員からフィードバックをもらいながら調整中。日報処理に奪われていた時間を、攻めの仕事に取り戻す。",
         manga: "/images/manga_daily_report.png",
@@ -175,6 +180,8 @@ export default function ProjectPage({ params }: { params: Params }) {
                             <span className={`inline-block text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ${
                                 (project.badge as string) === "運用中"
                                     ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                    : (project.badge as string) === "原点"
+                                    ? "bg-gray-500/20 text-gray-400 border border-gray-500/30"
                                     : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
                             }`}>
                                 {project.badge as string}

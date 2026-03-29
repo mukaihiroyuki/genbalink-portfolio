@@ -12,6 +12,7 @@ const mainProjects = [
         description: "紙の日報をゼロに。現場をリアルタイム管理。",
         tags: ["Next.js", "Supabase", "PWA"],
         color: "#2E7D32",
+        badge: "運用中",
     },
     {
         slug: "tree-inventory",
@@ -19,6 +20,7 @@ const mainProjects = [
         description: "2万本の樹木をスマホで即検索。在庫が見える化。",
         tags: ["Next.js", "Supabase", "PWA", "QR Code"],
         color: "#4CAF50",
+        badge: "運用中",
     },
     {
         slug: "document-check",
@@ -26,6 +28,7 @@ const mainProjects = [
         description: "4万件超のデータを0.3秒で検索。スプシ地獄から解放。",
         tags: ["Next.js", "Supabase"],
         color: "#2196F3",
+        badge: "運用中",
     },
     {
         slug: "construction-crm",
@@ -49,6 +52,7 @@ const mainProjects = [
         description: "AppSheetで300時間かけて開発。現場では導入されなかった原点のアプリ。",
         tags: ["Rapid Prototyping", "QR Code"],
         color: "#FFB800",
+        badge: "原点",
     },
 ];
 
@@ -110,6 +114,8 @@ export default function Works() {
                                 <span className={`inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-3 ${
                                     project.badge === "運用中"
                                         ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                        : project.badge === "原点"
+                                        ? "bg-gray-500/20 text-gray-400 border border-gray-500/30"
                                         : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
                                 }`}>
                                     {project.badge}
