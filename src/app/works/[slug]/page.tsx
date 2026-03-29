@@ -87,15 +87,16 @@ const projects = {
     "construction-crm": {
         title: "建設業向けCRM",
         subtitle: "2〜3ツールまたぎの情報を、これ1つに",
-        badge: "開発中",
+        badge: "運用中",
         description:
             "頼りにしていた業務ツールが廃止の危機。代わりに勧められたツールは現場で不評。「同じ使い勝手で作れないか」——現場からの一言がきっかけだった。顧客管理・対応履歴・写真をスレッドで一元管理。誰がいつ何をしたか、5W1Hで追える。担当者が辞めても情報は残る。自社開発のため外部コスト不要。ナレッジ管理のプロトタイプを見せたら「CRM本体も頼む」と話が動いた。",
         manga: "/images/manga_crm_development.png",
         tech: ["Next.js", "Supabase", "PWA"],
         color: "#5C6BC0",
         screenshots: [
-            { src: "/images/screenshots/construction-crm/crm-knowledge-list.png", caption: "ナレッジ一覧 — 案件をタグ・担当者・工事ステータスで管理" },
-            { src: "/images/screenshots/construction-crm/crm-knowledge-detail.png", caption: "ナレッジ詳細 — スレッド・写真管理で5W1Hを時系列で記録" },
+            { src: "/images/screenshots/construction-crm/crm-case-list.png", caption: "案件一覧 — 3,000件超の案件をステータス・カテゴリ・担当者で即検索" },
+            { src: "/images/screenshots/construction-crm/crm-case-detail.png", caption: "案件詳細 — 活動履歴・見積書・請求書・写真を案件に集約" },
+            { src: "/images/screenshots/construction-crm/crm-accounting.png", caption: "経理ダッシュボード — 未入金・請求・入金率を一画面で把握。日報アプリと連携" },
         ],
     },
     "daily-report": {
@@ -171,7 +172,11 @@ export default function ProjectPage({ params }: { params: Params }) {
                             {project.title}
                         </h1>
                         {"badge" in project && project.badge && (
-                            <span className="inline-block text-sm font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 whitespace-nowrap">
+                            <span className={`inline-block text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ${
+                                (project.badge as string) === "運用中"
+                                    ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                    : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
+                            }`}>
                                 {project.badge as string}
                             </span>
                         )}

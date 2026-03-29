@@ -33,7 +33,7 @@ const mainProjects = [
         description: "2〜3ツールまたぎの情報を、これ1つに。自社開発のため外部コスト不要。",
         tags: ["Next.js", "Supabase", "PWA"],
         color: "#5C6BC0",
-        badge: "開発中",
+        badge: "運用中",
     },
     {
         slug: "construction-plan",
@@ -107,7 +107,11 @@ export default function Works() {
                             }}
                         >
                             {"badge" in project && project.badge && (
-                                <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 mb-3">
+                                <span className={`inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-3 ${
+                                    project.badge === "運用中"
+                                        ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                        : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
+                                }`}>
                                     {project.badge}
                                 </span>
                             )}
