@@ -80,13 +80,13 @@ const projects = {
     },
     "construction-plan": {
         title: "施工計画書AI自動化",
-        subtitle: "膨大な書類作成を、AIで7〜8割自動化へ",
+        subtitle: "膨大な書類作成を、AIで“たたき台”まで一気に",
         description:
-            "施工計画書——現場が始まる前に必ず作る、膨大で面倒な書類の代表格。まずは着工前に役所へ提出する書類から着手。PythonとAIで設計書のPDFを読み込み、工程表や建設リサイクル書類の自動生成に成功した。事務員が設計書を渡すだけで提出書類が揃う状態を目指しつつ、最終ゴールは施工計画書の7〜8割自動化。",
+            "施工計画書——現場が始まる前に必ず作る、膨大で面倒な書類の代表格。ExcelとWordを往復して手で作り、役所では一発で通った試しがない。着工前に役所へ提出する書類から着手した。設計書のPDFをAI（Claude）に読み込ませ、工程表や建設リサイクル書類の“たたき台”を自動生成する。実際に市役所へ提出するところまで到達（まずは1件）。事務員が設計書を渡すだけで提出書類のたたき台が揃う——人が最後に仕上げる前提で、現場の手間を大きく削る。",
         manga: "/images/manga_construction_planning.png",
-        tech: ["Python", "Gemini API", "PDF解析", "Word/Excel自動生成"],
+        tech: ["Next.js", "Claude API", "PDF解析", "Word/Excel自動生成"],
         color: "#E65100",
-        badge: "開発中",
+        badge: "実運用中",
     },
     "construction-crm": {
         title: "建設業向けCRM",

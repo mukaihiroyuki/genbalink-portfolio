@@ -41,10 +41,10 @@ const mainProjects = [
     {
         slug: "construction-plan",
         title: "施工計画書AI自動化",
-        description: "設計書を渡すだけで提出書類を自動生成。最終目標は7〜8割自動化。",
-        tags: ["Python", "Gemini API", "PDF解析"],
+        description: "Excel・Wordの往復で手作業だった提出書類。設計書を渡すと、たたき台が出てくる。本番提出まで到達。",
+        tags: ["Next.js", "Claude API", "PDF解析"],
         color: "#E65100",
-        badge: "開発中",
+        badge: "実運用中",
     },
     {
         slug: "equipment-management",
