@@ -87,6 +87,7 @@ const projects = {
         tech: ["Next.js", "Claude API", "PDF解析", "Word/Excel自動生成"],
         color: "#E65100",
         badge: "実運用中",
+        noteUrl: "https://note.com/genbalink/n/n07b1714c9b32",
     },
     "construction-crm": {
         title: "建設業向けCRM",
