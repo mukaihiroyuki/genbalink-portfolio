@@ -28,9 +28,9 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-gray-400 text-lg mb-8 text-center max-w-md"
             >
-                業務効率化のご相談、お仕事のご依頼は
+                施工計画書、まずは一枚
                 <br />
-                お気軽にお問い合わせください。
+                試しに作ってみませんか？
             </motion.p>
 
             <motion.a
@@ -44,7 +44,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#00D4FF] text-black font-semibold rounded-full hover:bg-[#00B8E0] transition-colors duration-300"
             >
-                お問い合わせ
+                まず1枚作ってみる
             </motion.a>
 
             {/* Footer */}
